@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "required": [
+    "seller",
+    "buyer",
+    "buyerPhoneNumber",
+    "goods",
+    "deliveryAddress"
+  ],
+  "properties": {
+    "seller": {
+      "type": "string",
+      "minLength": 3
+    },
+    "buyer": {
+      "type": "string",
+      "minLength": 3
+    },
+    "buyerPhoneNumber": {
+      "type": "string",
+      "pattern": "^((\\+7|8)+([0-9]){10})$"
+    },
+    "deliveryAddress": {
+      "type": "string",
+      "minLength": 3
+    },
+    "goods": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "count",
+          "cost"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 3
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "cost": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
+
