@@ -1,1 +1,14 @@
+jsonSchema.library.uri: 'http://example.rnemykin.ru/schema/#'
 
+spring:
+  datasource:
+    url: jdbc:h2:file:./db/json-schema-validation;AUTO_SERVER=TRUE
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
