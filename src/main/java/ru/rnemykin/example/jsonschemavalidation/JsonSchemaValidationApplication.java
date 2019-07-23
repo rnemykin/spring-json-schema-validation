@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import ru.rnemykin.example.jsonschemavalidation.model.PaymentMethod;
 import ru.rnemykin.example.jsonschemavalidation.repository.PaymentMethodRepository;
-import ru.rnemykin.spring.boot.jsonschema.keyword.KeywordProcessor;
+import ru.rnemykin.spring.boot.jsonschema.keyword.impl.AbstractKeywordProcessor;
 import ru.rnemykin.spring.boot.jsonschema.support.SpringAwareKeywordValidatorFactory;
 
 import java.util.Map;
@@ -48,7 +48,7 @@ public class JsonSchemaValidationApplication {
 
 
     @Bean
-    public Library library(KeywordProcessor processor, ApplicationContext ctx) {
+    public Library library(AbstractKeywordProcessor processor, ApplicationContext ctx) {
         LibraryBuilder builder = DraftV4Library.get().thaw();
         builder.addKeyword(
                 Keyword.newBuilder(processor.keyword())
