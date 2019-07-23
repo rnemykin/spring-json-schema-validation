@@ -1,0 +1,12 @@
+{
+  "seller":  "Intel",
+  "buyer": "rnemykin",
+  "buyerPhoneNumber": "+79158415265",
+  "deliveryAddress":  "Russia, Belgorod",
+  "goods":  [{
+    "name": "Core i7",
+    "count": 2,
+    "cost": 23000
+  }],
+  "paymentMethod": "MasterCard"
+}
