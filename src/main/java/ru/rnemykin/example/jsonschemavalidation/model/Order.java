@@ -16,4 +16,5 @@ public class Order {
     Set<Good> goods;
     BigDecimal totalSum;
     String deliveryAddress;
+    String paymentMethod;
 }

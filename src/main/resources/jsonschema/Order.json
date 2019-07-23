@@ -5,7 +5,8 @@
     "buyer",
     "buyerPhoneNumber",
     "goods",
-    "deliveryAddress"
+    "deliveryAddress",
+    "paymentMethod"
   ],
   "properties": {
     "seller": {
@@ -48,6 +49,10 @@
           }
         }
       }
+    },
+    "paymentMethod": {
+      "type": "string",
+      "enumDbValue": "PAYMENT_METHOD"
     }
   }
 }
