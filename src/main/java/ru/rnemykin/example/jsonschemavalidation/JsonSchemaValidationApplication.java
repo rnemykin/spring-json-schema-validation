@@ -1,5 +1,6 @@
 package ru.rnemykin.example.jsonschemavalidation;
 
+import com.fasterxml.jackson.core.JsonPointer;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.github.fge.jackson.JsonLoader;
 import com.github.fge.jsonschema.core.keyword.syntax.checkers.helpers.TypeOnlySyntaxChecker;
@@ -77,7 +78,7 @@ public class JsonSchemaValidationApplication {
         return StreamSupport.stream(report.spliterator(), false)
                 .map(ProcessingMessage::asJson)
                 .filter(m -> "validation".equals(m.get("domain").asText()))
-                .collect(Collectors.toMap(m -> m.get("instance").get("pointer").asText(), m -> m.get("message").asText()));
+                .collect(Collectors.toMap(m -> m.at(JsonPointer.valueOf("/instance/pointer")).asText(), m -> m.get("message").asText()));
     }
 
 
