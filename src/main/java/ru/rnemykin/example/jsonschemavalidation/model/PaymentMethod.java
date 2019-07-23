@@ -1,4 +1,4 @@
-package ru.rnemykin.example.jsonschemavalidation.model.enums;
+package ru.rnemykin.example.jsonschemavalidation.model;
 
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
